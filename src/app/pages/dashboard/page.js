@@ -9,5 +9,6 @@ export default async function Dashboard() {
         <Suspense fallback={<p>carregando...</p>}>
             <ListUsers users={users}/>
         </Suspense>
+        //dois botoes de alterar e registrar 
     </div>
   );};
