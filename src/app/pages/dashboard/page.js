@@ -10,7 +10,7 @@ export default async function Dashboard() {
             <ListUsers users={users}/>
 
             <a href="/pages/alterar">Alterar</a>
-            <a href="pages/registrar">Registrar</a>
+            <a href="/pages/registrar">Registrar</a>
         </Suspense>
      
     </div>

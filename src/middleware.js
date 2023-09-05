@@ -10,7 +10,7 @@ export const middleware = (request) => {
     const vaiVoltarnao = new URL('/pages/dashboard', request.url);
 
     if (!isTokenValidated || !token) {
-        if (request.nextUrl.pathname === '/pages/dashboard') {
+        if (request.nextUrl.pathname === '/pages/dashboard' || request.nextUrl.pathname === '/pages/alterar' || request.nextUrl.pathname =='/pages/registrar' ) {
             return NextResponse.redirect(urlLogin);
         }
     }
@@ -22,6 +22,6 @@ export const middleware = (request) => {
     NextResponse.next();
 };
 export const config = {
-    matcher: ['/', '/pages/dashboard']
+    matcher: ['/', '/pages/dashboard', '/pages/alterar', '/pages/registrar']
 };
 
