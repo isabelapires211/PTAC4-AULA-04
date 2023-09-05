@@ -1,0 +1,37 @@
+'use client'
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+ const formRegister =  () => {
+  const handlerAlterar= async (e) => {
+    e.preventDefault();
+    toast.error('Os dados foram registrado com sucesso!')
+  }
+
+  return (
+    <div>
+      <h1>Registrar</h1>
+      <form onSubmit={handlerAlterar}>
+        <input
+          placeholder='Nome'
+          type="Nome"
+         >
+        </input>
+        <input
+          placeholder='Email'
+          type='Email'
+         >
+        </input>
+        <input
+          placeholder='Senha'
+          type='password'
+        >
+        </input>
+        <button>Alterar</button>
+        <ToastContainer/>
+      </form>
+    </div>
+  )
+}
+
+export default formRegister;
