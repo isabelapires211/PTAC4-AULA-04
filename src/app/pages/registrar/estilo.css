@@ -1,6 +1,6 @@
 
 div {
-    background-color: #0056b3;
+
     text-align: center;
     margin-top: 20px;
    
@@ -59,11 +59,11 @@ div {
   }
   
   .Toastify__toast--error {
-    background-color: #ff5722;
-    color: #fff;
+    background-color: #f7f6f6;
+    color: #0c0c0c;
   }
   
   .Toastify__close-button {
-    color: #fff;
+    color: #ca1414;
   }
   
