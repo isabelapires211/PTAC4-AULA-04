@@ -11,7 +11,7 @@ import './estilo.css';
 
   return (
     <div>
-      <h1>Registrar</h1>
+      <h1>Cadastrar</h1>
       <form onSubmit={handlerRegistrar}>
         <input
           placeholder='Nome'
@@ -28,7 +28,7 @@ import './estilo.css';
           type='password'
         >
         </input>
-        <button>Alterar</button>
+        <button>Cadastrar</button>
         <ToastContainer/>
       </form>
     </div>

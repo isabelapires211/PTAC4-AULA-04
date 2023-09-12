@@ -1,6 +1,6 @@
 
 div {
-    background-color: #f4f4f5;
+    background-color: #f3f0f6;
     text-align: center;
     margin-top: 20px;
    
@@ -8,13 +8,15 @@ div {
   
   h1 {
     font-size: 32px;
+    font-family: 'Georgia', Times New Roman, Times, serif;
+    text-align: center;
     margin-bottom: 20px;
   }
   
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
     width: 300px;
     margin: 0 auto;
   }
@@ -27,21 +29,22 @@ div {
     border-radius: 5px;
     font-size: 16px;
   }
-  
+    
   button {
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 10px 0px; 
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3;  
   }
+
   
   /* Style for ToastContainer (React Toastify) */
   .Toastify__toast-container {
@@ -59,11 +62,11 @@ div {
   }
   
   .Toastify__toast--error {
-    background-color: #f3edeb;
-    color: #100e0e;
+    background-color: #edf0f5;
+    color: #030303;
   }
   
   .Toastify__close-button {
-    color: #b31515;
+    color: #c81e1e;
   }
   
