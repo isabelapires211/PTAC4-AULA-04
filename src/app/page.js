@@ -18,7 +18,7 @@ export default function Login() {
     try {
       const userAuth = await handlerAcessUser(user);
       if(userAuth.token === undefined){
-        toast.error("erro no email ou senha")
+        toast.error("Verifique se senha ou E-mail são validos!")
       }
       push('/pages/dashboard');
      } catch {
@@ -27,7 +27,7 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <div class="div">
       <h1>Login</h1>
       <form onSubmit={handlerLogin}>
         <input
