@@ -1,4 +1,7 @@
 'use server'
+
+import { headers } from "next/dist/client/components/headers"
+
 const usuarios = [
     {
         nome: "isabela",
@@ -13,15 +16,22 @@ const usuarios = [
         token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
     }
 ]
-const getUserAuthenticated = (userlogin) => {
-    let usuarioAuth= {};
-    usuarios.map((user)=>{
-        if(user.email === userlogin.email && user.password === userlogin.password){
-            usuarioAuth= user
-        }
-    })
-     return usuarioAuth;
 
+const url = "https://service-work-p.vercel.app"
+
+
+const getUserAuthenticated = async (user) => {
+
+    const responseOfApi = await fetch (url+ 'user/authenticated',
+     {
+        method: "POST",
+        headers: { "Content-type" : "Application/json"},
+        body:JSON.stringify(user)
+     }
+     )
+
+     const userAuth = await responseOfApi.json()
+     return userAuth;
 
 }
 
