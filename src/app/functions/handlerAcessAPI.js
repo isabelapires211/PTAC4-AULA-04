@@ -17,7 +17,7 @@ const usuarios = [
     }
 ]
 
-const url = "https://service-work-p.vercel.app"
+const url = "https://trabalho-final-seven.vercel.app/"
 
 
 const getUserAuthenticated = async (user) => {
