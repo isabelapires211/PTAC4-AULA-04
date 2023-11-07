@@ -2,37 +2,53 @@
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import './estilo.css';
+import { useState } from "react";
+import { postUser } from "@/app/functions/handlerAcessAPI";
 
- const formRegister =  () => {
-  const handlerRegistrar= async (e) => {
-    e.preventDefault();
-    toast.error('Os dados foram registrado com sucesso!')
+export default function Register(){
+  const [user, setUser] =useState({
+    name:'',
+    email: '',
+    password: ''
+  });
+
+  const {push} = userRouter();
+
+  const handlerFormSubmit = async (event) => {
+    event.preventDefault();
+
+    try{
+      await postUser(user);
+      return push("/pages/dashboard");
+    } catch{
+      return toast.error("Erro");
+    }
   }
 
-  return (
-    <div>
-      <h1>Cadastrar</h1>
-      <form onSubmit={handlerRegistrar}>
+
+    return (
+      <div>
+        <h1>Cadastrar</h1>
+        <form onSubmit={handlerFormSubmit}>
         <input
           placeholder='Nome'
-          type="Nome"
-         >
+          type="name"
+          onChange={(e) => { setUser({ ...user, name: e.target.value }) }}>
         </input>
         <input
-          placeholder='Email'
-          type='Email'
-         >
+          placeholder='E-mail'
+          type="email"
+          onChange={(e) => { setUser({ ...user, email: e.target.value }) }}>
         </input>
         <input
           placeholder='Senha'
           type='password'
-        >
+          onChange={(e) => { setUser({ ...user, password: e.target.value }) }}>
         </input>
-        <button>Cadastrar</button>
-        <ToastContainer/>
-      </form>
-    </div>
-  )
-}
+          <button>Cadastrar</button>
+          <ToastContainer/>
+        </form>
+      </div>
+    )
+  }
 
-export default formRegister;
