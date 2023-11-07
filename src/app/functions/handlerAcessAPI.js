@@ -23,7 +23,7 @@ const getUsers = async () =>{
         const responseOfApi = await fetch(url + "/users",{
             next:{revalidate:10}
         });
-        const listUsers = responseOfApi.json();
+        const listUsers = await responseOfApi.json();
 
         return listUsers
     }catch{

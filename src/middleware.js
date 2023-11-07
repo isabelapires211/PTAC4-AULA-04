@@ -6,10 +6,10 @@ export const middleware = async (request) => {
 
     const token = request.cookies.get('token')?.value;
     const urlLogin = new URL('/', request.url);
-    const isTokenValidated = validateToken(token);
+   // const isTokenValidated = validateToken(token);
     const vaiVoltarnao = new URL('/pages/dashboard', request.url);
 
-    const isTokenValidate = await validateToken(token);
+    const isTokenValidated = await validateToken(token);
 
     if (!isTokenValidated || !token) {
         if (request.nextUrl.pathname === '/pages/dashboard' || request.nextUrl.pathname === '/pages/alterar' || request.nextUrl.pathname =='/pages/registrar' ) {
