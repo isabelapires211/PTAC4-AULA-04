@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './estilo.css';
 import { useState } from "react";
 import { postUser } from "@/app/functions/handlerAcessAPI";
+import { useRouter } from 'next/navigation';
 
 export default function Register(){
   const [user, setUser] =useState({
@@ -12,7 +13,7 @@ export default function Register(){
     password: ''
   });
 
-  const {push} = userRouter();
+  const {push} = useRouter();
 
   const handlerFormSubmit = async (event) => {
     event.preventDefault();

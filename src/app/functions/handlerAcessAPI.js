@@ -36,7 +36,7 @@ const getUsers = async () =>{
         try{
             const responseOfApi = await fetch(url + "/user", {
                 method: "POST",
-                headers: { 'Content-Type': 'Aplication/json'},
+                headers: { 'Content-Type': 'Application/json'},
                 body: JSON.stringify(user)
             });
             const userSave = await responseOfApi.json();
