@@ -1,7 +1,13 @@
 'use client'
+import React, { useEffect, userState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import { getUser, updateUser } from "@/app/functions/handlerAcessAPI";
+import { useRouter } from "next/router";
 import 'react-toastify/dist/ReactToastify.css';
 import './estilo.css';
+
+
+/*terminande escrever
 
  const form =  () => {
   const handlerAlterar= async (e) => {
@@ -9,7 +15,24 @@ import './estilo.css';
     toast.error('Os dados alterado deu certo!')
   }
 
-  return (
+
+  export default function alterar ({ params}) {
+
+    const [user, setUser] = userState({
+      nome: '',
+      email: '',
+      password:''
+    })
+
+    const {push} = useRouter();
+
+    useEffect(() => {
+
+    })
+  }
+
+
+  /*return (
     <div>
       <h1>Alterar</h1>
       <form onSubmit={handlerAlterar}>
@@ -35,4 +58,5 @@ import './estilo.css';
   )
 }
 
-export default form;
+export default form;*/
+

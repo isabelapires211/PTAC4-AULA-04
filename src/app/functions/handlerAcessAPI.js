@@ -32,6 +32,25 @@ const getUsers = async () =>{
 
     }
 
+    const getUser = async ( id ) => {
+        const token = cookies().get('token')?.value;
+
+        try {
+            const responseOfApi = await fetch(`${url}/user/${id}`, { 
+                method:'GET',
+                headers: {
+                    'Content-type': 'Application/json',
+                    cookies: `token=${token}`
+                },
+            
+        });
+
+        const userSave = await responseOfApi.json();
+        return userSave;
+    }catch{
+        return null;
+    }}
+
     const postUser = async (user) =>{
         try{
             const responseOfApi = await fetch(url + "/user", {
@@ -67,4 +86,4 @@ const getUsers = async () =>{
         return null;
     }}
 
-export { getUsers, getUserAuthenticated, postUser };
+export { getUsers, getUserAuthenticated, postUser, updateUser, getUser };
